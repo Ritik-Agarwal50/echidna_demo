@@ -1,14 +1,21 @@
-// SPDX-License-Identifier: UNLICENSED
-pragma solidity ^0.8.13;
+//SPDX-License-Identifier:MIT
+
+pragma solidity ^0.8.20;
 
 contract Counter {
-    uint256 public number;
+    uint256 public count;
 
-    function setNumber(uint256 newNumber) public {
-        number = newNumber;
+    function inc() external {
+        count += 1;
     }
 
-    function increment() public {
-        number++;
+    function dec() external {
+        count -= 1;
+    }
+}
+
+contract TestCounter is Counter {
+    function echidna_test_pass() public pure returns (bool) {
+        return true;
     }
 }
